@@ -29,8 +29,8 @@ class TestDirectorService:
 
     def test_get_one(self):
         director = self.director_service.get_one(1)
-        assert director != None
-        assert director.id != None
+        assert director is not None
+        assert director.id is not None
 
     def test_get_all(self):
         directors = self.director_service.get_all()
@@ -51,4 +51,11 @@ class TestDirectorService:
                       "name": "Lars von Trier"
                       }
         self.director_service.update(director_d)
+
+    def test_partially_update(self):
+        director_d = {"id": 2,
+                      "name": "Lars von Trier"
+                      }
+        self.director_service.partially_update(director_d)
+
 

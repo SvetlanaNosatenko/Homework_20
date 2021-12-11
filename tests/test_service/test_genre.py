@@ -50,3 +50,10 @@ class TestGenreService:
                    "name": "Horror"
                    }
         self.genre_service.update(genre_d)
+
+    def test_partially_update(self):
+        genre_d = {"id": 2,
+                   "name": "Horror"
+                   }
+        self.genre_service.partially_update(genre_d)
+
